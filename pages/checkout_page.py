@@ -23,8 +23,8 @@ class CheckOut:
 
 
     def enter_country(self,countryname):
-        country1 = self.driver.find_element(By.XPATH,self.country)
-        sel = Select(country1)
+        country = self.driver.find_element(By.XPATH,self.country)
+        sel = Select(country)
         sel.select_by_visible_text(countryname)
 
     def enter_city(self,enter_city):
@@ -76,7 +76,7 @@ class CheckOut:
         self.confirm_orders()
         time.sleep(5)
         timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
-        screenshot_name = os.path.join("F:\\Amit Sharma\\Learning\\Python\\DemoWebShop-main\\screenshots",
+        screenshot_name = os.path.join("C:\\Users\\ankush.pandey_infobe\\PycharmProjects\\Assignment 2\\screenshots",
                                        f"screenshot_{timestamp}.png")
         self.driver.save_screenshot(screenshot_name)
         print(f"Screenshot saved as {screenshot_name}")
